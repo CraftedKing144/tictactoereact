@@ -1,10 +1,12 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .area {
-    height: 500px;
-    width: 400px;
+    background: #203060;
+    border-radius: 2% ;
+    height: 660px;
+    width: 440px;
 
     display: flex;
     flex-direction: column;
@@ -18,7 +20,9 @@
 }
 
 .playboard {
-    background-color: #eee;
+    background-color: #4060bb;
+    border: 10px solid #102050;
+    border-radius: 10px ;
     height: 350px;
     width: 350px;
 
@@ -36,20 +40,21 @@
     align-items: center;
 
     font-size: 100px;
-    background-color: #ddd;
+    background-color: #3753a0;
     width: 100px;
     height: 100px;
-    border: 4px solid black;
+    border-radius: 10px ;
     cursor: pointer;
 }
 
 .winner {
-    background-color: #eee;
-    height: 70px;
+    background-color: #4060bb;
+    height: 75px;
     width: 200px;
     text-align: center;
     font-size: 30px;
-    border: 4px solid black;
+    border: 10px solid #102050;
+    border-radius: 10px ;
 }
 
 .whoWon {
@@ -61,8 +66,9 @@
     width: 190px;
     pointer-events: none;
 
-    background-color: #bbb;
-    border: 5px solid black;
+    background-color: #4669c9;
+    border: 10px solid #18348a;
+    border-radius: 10px ;
     opacity: 0%;
 
     font-size: 55px;
@@ -70,8 +76,8 @@
 }
 
 .rButton {
-    background-color: #ddd;
-    border: 4px solid black;
-    font-size: 20px;
+    background-color: #4060bb;
+    border: 8px solid #102050;
+    font-size: 25px;
     cursor: pointer;
 }

@@ -6,8 +6,9 @@ const isX = new Array(9).fill(false);
 const isO = new Array(9).fill(false);
 
 const Playground = () => {
-  const [isRunning, setIsRunning] = useState(true)
+  const [isRunning, setIsRunning] = useState(true);
   const [changePlayer, setChangePlayer] = useState(false);
+  const [stillFree, setStillFree] = useState(9);
 
   const [winX, setWinX] = useState(() => {
     const winsX = parseInt(localStorage.getItem("XWinsInput"));
@@ -20,7 +21,7 @@ const Playground = () => {
 
   localStorage.setItem("OWinsInput", winO);
   localStorage.setItem("XWinsInput", winX);
-  const [whoWin, setWhoWin] = useState("")
+  const [whoWin, setWhoWin] = useState("");
 
   return (
     <div className="area">
@@ -33,16 +34,31 @@ const Playground = () => {
               id={"f" + idx}
               key={idx}
               onClick={(e) => {
-                if (changePlayer && !isX[idx] && !isO[idx] && isRunning) {
+                if (
+                  changePlayer &&
+                  !isX[idx] &&
+                  !isO[idx] &&
+                  isRunning &&
+                  stillFree != 0
+                ) {
                   e.currentTarget.innerText = "X";
                   setChangePlayer(!changePlayer);
+                  setStillFree(stillFree - 1);
+                  console.log(stillFree)
                   isX[idx] = true;
-                } else if (!isX[idx] && !isO[idx] && isRunning) {
+                } else if (
+                  !isX[idx] &&
+                  !isO[idx] &&
+                  isRunning &&
+                  stillFree != 0
+                ) {
                   e.currentTarget.innerText = "O";
                   setChangePlayer(!changePlayer);
+                  setStillFree(stillFree - 1);
+                  console.log(stillFree);
                   isO[idx] = true;
-                } else if (!isRunning) {
-                  reset(setIsRunning, false, setWinX, setWinO);
+                } else if (!isRunning || stillFree == 0) {
+                  reset(setIsRunning, false, setWinX, setWinO, setStillFree);
                 }
                 setWhoWin(check(isX, isO));
               }}
@@ -64,7 +80,7 @@ const Playground = () => {
         <span
           className="rButton"
           onClick={() => {
-            reset(setIsRunning, false, setWinX, setWinO);
+            reset(setIsRunning, false, setWinX, setWinO, setStillFree);
           }}
         >
           Reset
@@ -73,7 +89,7 @@ const Playground = () => {
         <span
           className="rButton"
           onClick={() => {
-            reset(setIsRunning, true, setWinX, setWinO);
+            reset(setIsRunning, true, setWinX, setWinO, setStillFree);
           }}
         >
           Reset Points
@@ -109,24 +125,29 @@ const Playground = () => {
       if (cIsX[isWinningA[0]] && cIsX[isWinningA[1]] && cIsX[isWinningA[2]]) {
         setWinX(winX + 1);
         setIsRunning(false);
-        return "X"
-      } else if (cIsO[isWinningA[0]] && cIsO[isWinningA[1]] && cIsO[isWinningA[2]]) {
+        return "X";
+      } else if (
+        cIsO[isWinningA[0]] &&
+        cIsO[isWinningA[1]] &&
+        cIsO[isWinningA[2]]
+      ) {
         setWinO(winO + 1);
         setIsRunning(false);
-        return "O"
+        return "O";
       }
       isWinningA = [];
     }
   }
-}
+};
 
-function reset(setIsRunning, b, setWinX, setWinO) {
+function reset(setIsRunning, b, setWinX, setWinO, setStillFree) {
   for (let j = 0; j < 9; j++) {
     document.getElementById("f" + j).innerText = "";
   }
   isO.fill(false);
   isX.fill(false);
   setIsRunning(true);
+  setStillFree(9)
 
   if (b) {
     setWinX(0);
