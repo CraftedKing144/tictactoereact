@@ -1,113 +1,113 @@
 * {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .background {
-    position:fixed;
-    padding:0;
-    margin:0;
+  position: fixed;
+  padding: 0;
+  margin: 0;
 
-    top:0;
-    left:0;
+  top: 0;
+  left: 0;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background: linear-gradient(180deg, rgb(33, 33, 71) 0%, rgb(36, 36, 61) 100%);
+  background: linear-gradient(180deg, rgb(33, 33, 71) 0%, rgb(36, 36, 61) 100%);
 }
 
 .area {
-    height: 650px;
-    width: 440px;
+  height: 650px;
+  width: 440px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .playboard {
-    background-color: #434368;
-    border: 10px solid #434368;
-    border-radius: 7% ;
-    height: 400px;
-    width: 400px;
+  background-color: #434368;
+  border: 10px solid #434368;
+  border-radius: 7%;
+  height: 400px;
+  width: 400px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
-    font-size: 100px;
-    background-color: #e5def3;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px ;
-    width: 115px;
-    height: 115px;
-    cursor: pointer;
+  font-size: 100px;
+  background-color: #e5def3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  width: 115px;
+  height: 115px;
+  cursor: pointer;
 }
 
 .winner {
-    background-color: #434368;
-    border: 10px solid #434368;
-    height: 95px;
-    width: 400px;
-    text-align: center;
-    font-size: 40px;
-    border-radius: 20px ;
+  background-color: #434368;
+  border: 10px solid #434368;
+  height: 95px;
+  width: 400px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 20px;
 }
 
 .buttons {
-    background-color: #434368;
-    border: 10px solid #434368;
-    height: 50px;
-    width: 400px;
-    border-radius: 20px ;
+  background-color: #434368;
+  border: 10px solid #434368;
+  height: 50px;
+  width: 400px;
+  border-radius: 20px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .rButton {
-    background-color: #e5def3;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px ;
-    width: 180px;
-    height: 35px;
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
+  background-color: #e5def3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  width: 180px;
+  height: 35px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .whoWon {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 65px;
-    width: 190px;
-    pointer-events: none;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 65px;
+  width: 190px;
+  pointer-events: none;
 
-    background-color: #e5def3;
-    border: 10px solid #6273a7;
-    border-radius: 10px ;
-    opacity: 0%;
+  background-color: #e5def3;
+  border: 10px solid #141927;
+  border-radius: 10px;
+  opacity: 0%;
 
-    font-size: 55px;
-    text-align: center;
+  font-size: 55px;
+  text-align: center;
 }
