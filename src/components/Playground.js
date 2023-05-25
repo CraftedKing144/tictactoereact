@@ -24,84 +24,88 @@ const Playground = () => {
   const [whoWin, setWhoWin] = useState("");
 
   return (
-    <div className="area">
-      <div className="playboard">
-        {Array(9)
-          .fill(0)
-          .map((zahl, idx) => (
-            <div
-              className="field"
-              id={"f" + idx}
-              key={idx}
-              onClick={(e) => {
-                if (
-                  changePlayer &&
-                  !isX[idx] &&
-                  !isO[idx] &&
-                  isRunning &&
-                  stillFree != 0
-                ) {
-                  e.currentTarget.innerText = "X";
-                  setChangePlayer(!changePlayer);
-                  setStillFree(stillFree - 1);
-                  console.log(stillFree)
-                  isX[idx] = true;
-                } else if (
-                  !isX[idx] &&
-                  !isO[idx] &&
-                  isRunning &&
-                  stillFree != 0
-                ) {
-                  e.currentTarget.innerText = "O";
-                  setChangePlayer(!changePlayer);
-                  setStillFree(stillFree - 1);
-                  console.log(stillFree);
-                  isO[idx] = true;
-                } else if (!isRunning || stillFree == 0) {
-                  reset(setIsRunning, false, setWinX, setWinO, setStillFree);
-                }
-                setWhoWin(check(isX, isO));
-              }}
-            ></div>
-          ))}
-      </div>
+    <div className="background">
+      <div className="area">
+        <div className="playboard">
+          {Array(9)
+            .fill(0)
+            .map((zahl, idx) => (
+              <div
+                className="field"
+                id={"f" + idx}
+                key={idx}
+                onClick={(e) => {
+                  if (
+                    changePlayer &&
+                    !isX[idx] &&
+                    !isO[idx] &&
+                    isRunning &&
+                    stillFree != 0
+                  ) {
+                    e.currentTarget.innerText = "X";
+                    setChangePlayer(!changePlayer);
+                    setStillFree(stillFree - 1);
+                    console.log(stillFree);
+                    isX[idx] = true;
+                  } else if (
+                    !isX[idx] &&
+                    !isO[idx] &&
+                    isRunning &&
+                    stillFree != 0
+                  ) {
+                    e.currentTarget.innerText = "O";
+                    setChangePlayer(!changePlayer);
+                    setStillFree(stillFree - 1);
+                    isO[idx] = true;
+                  } else if (!isRunning || stillFree == 0) {
+                    reset(false);
+                  }
+                  setWhoWin(check(isX, isO));
+                }}
+              ></div>
+            ))}
+        </div>
 
-      <div className="winner">
-        <span id="xPlayer" style={{ color: changePlayer ? "red" : "black" }}>
-          X player: {winX}
-        </span>
-        <br />
-        <span id="oPlayer" style={{ color: changePlayer ? "black" : "red" }}>
-          O player: {winO}
-        </span>
-      </div>
+        <div className="winner">
+          <span
+            id="xPlayer"
+            style={{ color: changePlayer ? "#e5def3" : "black" }}>
+            X player: {winX}
+          </span>
+          <br />
+          <span
+            id="oPlayer"
+            style={{ color: changePlayer ? "black" : "#e5def3" }}>
+            O player: {winO}
+          </span>
+        </div>
 
-      <span>
-        <span
-          className="rButton"
-          onClick={() => {
-            reset(setIsRunning, false, setWinX, setWinO, setStillFree);
-          }}
+        <span className="buttons">
+          <span
+            className="rButton"
+            onClick={() => {
+              reset(false);
+            }}
+          >
+            Reset
+          </span>
+          <span
+            className="rButton"
+            onClick={() => {
+              reset(true);
+            }}
+          >
+            Reset Points
+          </span>
+        </span>
+
+        <div
+          className="whoWon"
+          id="wonScreen"
+          style={{ opacity: isRunning ? "0%" : "95%" }}
         >
-          Reset
-        </span>
-        <span> </span>
-        <span
-          className="rButton"
-          onClick={() => {
-            reset(setIsRunning, true, setWinX, setWinO, setStillFree);
-          }}
-        >
-          Reset Points
-        </span>
-      </span>
-
-      <div
-        className="whoWon"
-        id="wonScreen"
-        style={{ opacity: isRunning ? "0%" : "95%" }}
-      >
-        {whoWin} Wins
+          {whoWin} Wins
+        </div>
       </div>
     </div>
   );
@@ -116,7 +120,7 @@ const Playground = () => {
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
-      [2, 4, 6],
+      [2, 4, 6]
     ];
 
     for (let j = 0; j <= winningCondition.length; j++) {
@@ -138,21 +142,22 @@ const Playground = () => {
       isWinningA = [];
     }
   }
+
+  function reset(resetPoints) {
+    for (let j = 0; j < 9; j++) {
+      document.getElementById("f" + j).innerText = "";
+    }
+    isO.fill(false);
+    isX.fill(false);
+    setIsRunning(true);
+    setStillFree(9);
+
+    if (resetPoints) {
+      setWinX(0);
+      setWinO(0);
+    }
+  }
+
 };
-
-function reset(setIsRunning, b, setWinX, setWinO, setStillFree) {
-  for (let j = 0; j < 9; j++) {
-    document.getElementById("f" + j).innerText = "";
-  }
-  isO.fill(false);
-  isX.fill(false);
-  setIsRunning(true);
-  setStillFree(9)
-
-  if (b) {
-    setWinX(0);
-    setWinO(0);
-  }
-}
 
 export default Playground;
