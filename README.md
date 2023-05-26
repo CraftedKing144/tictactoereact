@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# TicTacToe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Table of content
 
-## Available Scripts
+- [TicTacToe](#tictactoe)
+    - [Table of content](#table-of-content)
+    - [About The Project](#about-the-project)
+      - [Tech Stack](#tech-stack)
+      - [Functions](#functions)
+    - [Play yourself](#play-yourself)
 
-In the project directory, you can run:
+### About The Project
 
-### `npm start`
+Its an simple tictactoe game project, I made through an intership.
+It is the first time I made something in ReactJS and here is what it looks like:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![](Animation.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Tech Stack
 
-### `npm test`
+- HTML
+- JavaScript
+- CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Functions
 
-### `npm run build`
+* it checks if there are three "X" or "O" in a row (also diagonal)
+* on winning the game, it shows an winning screen and counts a point to the winner
+* on click reset (click on a field when won the game or draw) it resets the game
+* on reset points it also resets the game, but it also sets both players points to zero
+* the points are saved to the local-storage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Play yourself
+- [TicTacToe](https://craftedking144.github.io/tictactoereact/)
+  
