@@ -12,12 +12,13 @@ const Playground = () => {
   const [fieldBool, setFieldBool] = useState(new Array(9).fill(false));
 
   const [win, setWin] = useState(() => {
-    if (localStorage.key == "XWinsInput" && "OWinsInput") {
-      const winsX = parseInt(localStorage.getItem("XWinsInput"));
-      const winsO = parseInt(localStorage.getItem("OWinsInput"));
-      return [winsX, winsO];
+    let winsX = parseInt(localStorage.getItem("XWinsInput"));
+    let winsO = parseInt(localStorage.getItem("OWinsInput"));
+    if (isNaN(winsO) || isNaN(winsX)) {
+      winsO = 0;
+      winsX = 0;
     }
-    return [0, 0];
+    return [winsX, winsO];
   });
 
   localStorage.setItem("XWinsInput", win[0]);
