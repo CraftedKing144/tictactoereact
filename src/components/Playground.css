@@ -111,3 +111,146 @@
   font-size: 55px;
   text-align: center;
 }
+
+.login {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
+  transform: translateX(-430px);
+  transition: transform 1s ease-in;
+}
+
+.login-button {
+  background-color: #6c619c;
+  color: #e5def3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 250px;
+  height: 35px;
+  
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.login-area {
+  background-color: #524772;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #e5def3;
+  font-size: 30px;
+  border-radius: 5%;
+
+  width: 380px;
+  height: 180px;
+  position: relative;
+  z-index: 3;
+  padding: 20px;
+}
+
+.textField {
+  height: 20px;
+  width: 370px;
+  transition: border 0.2s ease-in, color 0.2s ease-in;
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 20px;
+}
+
+.textField:focus {
+  border-bottom: 3px solid #e5def3;
+  color: #e5def3;
+  outline: none;
+}
+
+::placeholder {
+  color: black;
+  font-size: 20px;
+  opacity: 60%;
+}
+
+.problem {
+  margin-top: 5px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  opacity: 100%;
+}
+
+.hide {
+  margin-top: 5px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  transition: opacity 2s ease;
+  opacity: 0%;
+}
+
+.sign-up-in-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up-in-button {
+  flex-basis: 48%;
+  background-color: #6c619c;
+  color: #e5def3;
+  transition: color 0.2s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+}
+
+.sign-up-in-button:active {
+  background-color: #e5def3;
+  color: black;
+}
+
+.toggle-sign-in {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+
+.logInAs {
+  width: 230px;
+  height: 155px;
+  margin-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #524772;
+  font-size: 28px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.username {
+  display: flex;
+  flex-direction: row;
+}
+
+.accountImage {
+  width: 60px;
+  height: 60px;
+}

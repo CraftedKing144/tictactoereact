@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Field from "./Field";
 import WinnerField from "./WinnerField";
 import WhoWins from "./WhoWins";
 import Buttons from "./Buttons";
+import Login from "./Login";
 import "./Playground.css";
-import { useState } from "react";
 
 const Playground = () => {
   const [isRunning, setIsRunning] = useState(true);
@@ -12,17 +12,17 @@ const Playground = () => {
   const [fieldBool, setFieldBool] = useState(new Array(9).fill(false));
 
   const [win, setWin] = useState(() => {
-    let winsX = parseInt(localStorage.getItem("XWinsInput"));
-    let winsO = parseInt(localStorage.getItem("OWinsInput"));
-    if (isNaN(winsO) || isNaN(winsX)) {
-      winsO = 0;
-      winsX = 0;
-    }
+    // let winsX = parseInt(localStorage.getItem("XWinsInput"));
+    // let winsO = parseInt(localStorage.getItem("OWinsInput"));
+    // if (isNaN(winsO) || isNaN(winsX)) {
+      let winsO = 0;
+      let winsX = 0;
+    // }
     return [winsX, winsO];
   });
 
-  localStorage.setItem("XWinsInput", win[0]);
-  localStorage.setItem("OWinsInput", win[1]);
+  // localStorage.setItem("XWinsInput", win[0]);
+  // localStorage.setItem("OWinsInput", win[1]);
   const [whoWin, setWhoWin] = useState("");
 
   const check = () => {
@@ -72,6 +72,18 @@ const Playground = () => {
     }
   };
 
+  const getAPI = (image) => {
+    fetch("https://dog.ceo/api/breeds/image/random")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        document.getElementById(image).src = data.message;
+        
+      })
+      .catch((error) => console.log("Error: " + error));
+  }
+
   return (
     <div className="background">
       <div className="area">
@@ -88,6 +100,7 @@ const Playground = () => {
         <Buttons reset={(resetPoints) => reset(resetPoints)} />
         <WhoWins whoWin={whoWin} isRunning={isRunning} />
       </div>
+      <Login win={win} />
     </div>
   );
 };

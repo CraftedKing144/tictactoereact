@@ -1,6 +1,6 @@
 import React from "react";
 
-const buttons = ({ reset }) => {
+const Buttons = ({ reset, api }) => {
   return (
     <span className="buttons">
       <span
@@ -23,4 +23,4 @@ const buttons = ({ reset }) => {
   );
 };
 
-export default buttons;
+export default Buttons;
